@@ -1,0 +1,53 @@
+.offer-form {
+    list-style-type: none;
+}
+.offer-form label {
+    position:absolute;
+    display: inline-block;
+    width: 200px;
+    height: 100%;
+    vertical-align: middle;
+    float: left;
+}
+.offer-form input, .offer-form textarea, .offer-form ul.select {
+    position: relative;
+    left: 200px;
+    width: 400px;
+    min-height: 2.5em;
+    padding: 0 0 0 0;
+    border: 1px solid;
+    border-radius: 5px;
+}
+
+.offer-form option {
+    display: inline-block;
+    height: 2.5em;
+}
+
+.offer-form textarea {
+    height: 5em;
+}
+.offer-form li {
+    position: relative;
+    height: auto;
+    vertical-align: center;
+    clear: both;
+}
+
+ul.select {
+    list-style-type: none;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.select li{
+    display: inline-block;
+    padding: 5px 0px 5px 5px;
+    box-sizing: border-box;
+    width: 100%;
+    cursor: pointer;
+}
+
+.select li.selected{
+    background-color: #ff0000;
+}

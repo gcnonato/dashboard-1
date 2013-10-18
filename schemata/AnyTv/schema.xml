@@ -1,0 +1,77 @@
+<database
+    name="anytv_offers"
+    defaultIdMethod="native"
+    namespace="AnyTv"
+    defaultPhpNamingMethod="phpname"
+    heavyIndexing="true"
+    >
+  <table name="anytv_offer" phpName="Offer">
+    <column name="id" type="BIGINT"
+            sqlType="BIGINT(20) UNSIGNED"
+            primaryKey="true"
+            autoIncrement="true" />
+    <column name="name" type="VARCHAR" size="255" />
+    <column name="description" type="CLOB" />
+    <column name="slug" type="VARCHAR" size="255" />
+    <column name="default_link" type="CLOB" />
+    <column name="cat_id" sqlType="BIGINT(20) UNSIGNED" />
+    <column name="payout_type" type="VARCHAR" size="45" />
+    <column name="revenue_type" type="VARCHAR" size="45" />
+    <column name="default_payout" type="FLOAT" />
+    <column name="max_payout" type="FLOAT" />
+    <column name="percent_payout" type="FLOAT" />
+    <column name="max_percent_payout" type="FLOAT"  />
+    <column name="tiered_payout" type="TINYINT" size="1" />
+    <column name="advertiser_id" type="BIGINT" size="19" sqlType="BIGINT(20) UNSIGNED"  />
+    <column name="protocol" type="VARCHAR" size="45" />
+    <column name="status" type="VARCHAR" size="20" />
+    <column name="expiration_date" type="TIMESTAMP" sqlType="DATETIME" />
+    <column name="currency" type="VARCHAR" size="3" />
+    <column name="offer_url" type="LONGVARCHAR" />
+    <foreign-key foreignTable="anytv_category" onDelete="restrict" onUpdate="cascade">
+      <reference local="cat_id" foreign="id" />
+    </foreign-key>
+    <unique>
+      <unique-column name="name" />
+      <unique-column name="slug" />
+    </unique>
+    <index>
+      <index-column name="offer_url" size="255" />
+    </index>
+  </table>
+  <table name="anytv_tag" phpName="Tag">
+    <column name="id" type="BIGINT"
+            sqlType="BIGINT(20) UNSIGNED"
+            primaryKey="true"
+            autoIncrement="true" />
+    <column name="name" type="VARCHAR" size="255" />
+    <column name="description" type="LONGVARCHAR" />
+    <unique>
+      <unique-column name="anytv_tag" />
+    </unique>
+  </table>
+  <table name="anytv_tagcloud" phpName="TagCloud">
+    <column name="offer_id"
+            sqlType="BIGINT(20) UNSIGNED"
+            primaryKey="true"
+            />
+    <column name="tag_id"
+            sqlType="BIGINT(20) UNSIGNED"
+            primaryKey="true"
+            />
+    <foreign-key foreignTable="anytv_offer" onDelete="cascade" onUpdate="cascade">
+      <reference local="offer_id" foreign="id" />
+    </foreign-key>
+    <foreign-key foreignTable="anytv_tag" onDelete="restrict" onUpdate="cascade">
+      <reference local="tag_id" foreign="id" />
+    </foreign-key>
+  </table>
+  <table name="anytv_category" phpName="Category">
+    <column name="id" type="BIGINT"
+            sqlType="BIGINT(20) UNSIGNED"
+            primaryKey="true"
+            autoIncrement="true" />
+    <column name="name" type="VARCHAR" size="255" />
+    <column name="description" type="LONGVARCHAR" />
+  </table>
+</database>

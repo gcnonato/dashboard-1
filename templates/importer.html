@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src='/js/jquery-2.0.0.min.js'></script>
+    <script src='/js/iqu-import.js'></script>
+    <link href='/css/anyfilechooser.css' rel='stylesheet' type='text/css' />
+    <link href='/css/importer.css' rel='stylesheet' type='text/css' />
+    <script>
+      $(document).ready(function(){
+          $('#offer_data_source').anyfilechooser();
+      });
+    </script>
+  </head>
+  <body>
+    <article id='offer_loader' class='offer-group'>
+      <div class='offer-container'>
+        <div class='offer-mid'>
+          <div id='offer_data_source_container'>
+          <label for='offer_data_source'>Select Offer Source:</label>
+          <div id='offer_data_source'>
+          </div>
+        </div>
+      </div>
+    </article>
+    <article class='offer-group' style='display:none'>
+      <div class='offer-container'>
+        <div class='offer-top'>
+          <div class='offer-top-left'>
+            <input type='text' class='offer-text-name' placeholder='Name of Offer' />
+            <input type='text' class='offer-text-category' placeholder='Category' />
+            <input type='text' class='offer-text-tags' placeholder='Tags' />
+          </div>
+          <div class='offer-top-right'>
+            <div class='offer-select-wrapper'>
+              <select class='offer-select-payout-type'>
+                <option>Payout Type</option>
+              </select>
+            </div>
+            <div class='offer-select-wrapper'>
+              <select class='offer-select-revenue-type'>
+                <option>Revenue Type</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class='offer-mid'>
+          <div class='offer-table-container'>
+            <table class='offer-table'>
+              <tr class='offer-table-header'>
+                <th class='offer-table-country'>Country</th>
+                <th class='offer-table-payout'>Payout</th>
+                <th class='offer-table-playnow'>Play Now Link</th>
+              </tr>
+              <tr class='offer-table-item'>
+                <td class='offer-table-country' contenteditable="true">US</td>
+                <td class='offer-table-payout' contenteditable="true">0.60</td>
+                <td class='offer-table-playnow' contenteditable="true">
+                  http://loremipsum.com/?playnow=1a3ac
+                </td>
+              </tr>
+              <tr class='offer-table-item-even'>
+                <td class='offer-table-country' contenteditable="true">PH</td>
+                <td class='offer-table-payout' contenteditable="true">0.60</td>
+                <td class='offer-table-playnow' contenteditable="true">
+                  http://loremipsum.com/?playnow=1a3ad
+                </td>
+              </tr>
+              <tr class='offer-table-item'>
+                <td class='offer-table-country' contenteditable="true">CA</td>
+                <td class='offer-table-payout' contenteditable="true">0.60</td>
+                <td class='offer-table-playnow' contenteditable="true">
+                  http://loremipsum.com/?playnow=1a3ae
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div class='offer-bottom'>
+          <div class='offer-bottom-left'></div>
+          <div class='offer-bottom-right'>
+            <select class='offer-select-show-hide'>
+              <option>Show/Hide Columns</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </article>
+  </body>
+</html>

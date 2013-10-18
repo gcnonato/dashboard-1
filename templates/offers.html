@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html charset='utf8'>
+  <head>
+    <link href='/css/offer-form.css' type='text/css' rel='stylesheet'  />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script src="/js/offer-form.js"></script>
+    <script>
+      $(document).ready(function(){
+          $('ul.select').ulSelect();
+          $('*[data-source]').dashboardFetch();
+      });
+    </script>
+  </head>
+  <body>
+    <div>
+    </div>
+    <div>
+      <div>
+      </div>
+      <div>
+        <form name='' method='post' action=''>
+          <ul class='offer-form'>
+            <li>
+              <label for='offer'>Offer Name</label>
+              <input id='offer' name='data[Offer][name]' type='text' />
+            </li>
+            <li>
+              <label for='description'>Offer Description</label>
+              <textarea id='description' name='data[Offer][description]'></textarea>
+            </li>
+            <li>
+              <label for='category'>Offer Category</label>
+              <textarea id='' name='category'></textarea>
+            </li>
+            <li>
+              <label for='preview_link'>Preview Link</label>
+              <input id='preview_link' name='data[Offer][preview_url]' type='text' />
+            </li>
+            <li>
+              <label for='game'>Offer Link</label>
+              <input id='' name='data[Offer][offer_url]' type='text' />
+            </li>
+            <li>
+              <label for='protocol'>Traceback Options</label>
+              <ul class='select' id='protocol' name='data[Offer][protocol]' type='text'>
+                <li type='http'>HTTP iFrame</li>
+                <li type='https'>HTTPS iFrame</li>
+                <li type='http_img'>HTTP Image</li>
+                <li type='https_img'>HTTPS Image</li>
+                <li type='server' class='selected'>Server Postback w/ Transaction ID</li>
+                <li type='server_affiliate'>Server Postback w/ Affiliate ID</li>
+              </ul>
+            </li>
+            <li>
+              <label for='game'>Revenue Type</label>
+              <input id='' name='data[Offer][revenue_type]' type='text' />
+            </li>
+            <li>
+              <label for='game'>Revenue</label>
+              <input id='' name='data[Offer][max_payout]' type='text' />
+            </li>
+            <li>
+              <label for='game'>Payout Type</label>
+              <input id='' name='data[Offer][payout_type]' type='text' />
+            </li>
+            <li>
+              <label for='game'>Payout</label>
+              <input id='' name='data[Offer][default_payout]' type='text' />
+            </li>
+            <li>
+              <label for='game'>Categories</label>
+              <ul id='' class='select' id='categories' data-source='/categories'>
+                <input type='hidden' class='select-selected' />
+              </ul>
+            </li>
+            <li>
+              <label for='game'>Countries</label>
+              <ul class='select' name='country' id='country' data-source='/countries'>
+              </ul>
+            </li>
+          </ul>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

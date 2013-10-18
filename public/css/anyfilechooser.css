@@ -1,0 +1,51 @@
+.anyfilechooser {
+    padding: 0;
+}
+.anyfilechooser .anyfilechooser-trigger {
+    visibility: hidden;
+    width: 0px;
+    height: 0px;
+    position:absolute;
+}
+
+.anyfilechooser .anyfilechooser-text {
+    display: inline-block;
+    height: 25px;
+    border: none;
+    color: #404040;
+    padding: 5px 5px;
+    margin: 0;
+
+    -moz-box-shadow: 1px 1px 5px 2px #4e4e4e;
+    -webkit-box-shadow: 1px 1px 5px 2px #4e4e4e;
+    box-shadow: 1px 1px 5px 2px #4e4e4e;
+}
+
+.anyfilechooser .anyfilechooser-text::-webkit-input-placeholder {
+    color: #404040;
+    font-weight: bold;
+}
+.anyfilechooser .anyfilechooser-text:-moz-placeholder,
+.anyfilechooser .anyfilechooser-text::-moz-placeholder,
+.anyfilechooser .anyfilechooser-text:-ms-input-placeholder {
+    color: #000;
+    font-weight: bold;
+}
+
+.anyfilechooser .anyfilechooser-button {
+    display: inline-block;
+    height: 25px;
+    margin: 0;
+    border: none;
+    padding: 5px 20px;
+    background: #bebebe;
+    font-weight: bold;
+    color: #404040;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+
+    -moz-box-shadow: 1px 1px 5px 2px #4e4e4e;
+    -webkit-box-shadow: 1px 1px 5px 2px #4e4e4e;
+    box-shadow: 1px 1px 5px 2px #4e4e4e;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src='/js/jquery-2.0.0.min.js'></script>
+    <script src='/js/iqu-import.js'></script>
+  </head>
+  <body>
+    <form name='import_xml' action='/offer/import' method='post' enctype='multipart/form-data'>
+      <input type='file' name='xml' />
+      <input type='submit' />
+    </form>
+    {% if response %}
+    <form>
+      {% for offer_name, offer in response %}
+      <article>
+        <h1>
+          {{ offer_name }}
+        </h1>
+        <table>
+          <tr>
+            <th>Country</th>
+            <th>Category</th>
+            <th>Payout</th>
+            <th>Play Now Link</th>
+          </tr>
+          <tr>
+            <td>Country</td>
+            <td>Category</td>
+            <td>Payout</td>
+            <td>Play Now Link</td>
+          </tr>
+        {% for country_code, content in offer %}
+          <tr>
+            <td>{{ country_code }}</td>
+            <td>
+              <input id='{{ offer_name }}_{{ country_code }}_main_category'
+                     name='name' value='{{ content.main_category }}' />
+            </td>
+            <td>
+              <input id='{{ offer_name }}_{{ country_code }}_name'
+                     name='name' value='{{ content.default_payout|number_format(2, '.', '') }}' />
+            </td>
+            <td>
+              <input id='{{ offer_name }}_{{ country_code }}_offer_link'
+              	name='offer_link' value='{{ content.offer_url|number_format(2, '.', '') }}' />
+            </td>
+          </tr>
+      {% endfor %}
+		</table>
+      </article>
+      {% endfor %}
+    </form>
+    {% endif %}
+  </body>
+</html>
